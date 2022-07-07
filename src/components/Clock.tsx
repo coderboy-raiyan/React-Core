@@ -1,10 +1,13 @@
 import { Component } from "react";
 
-export default class Clock extends Component {
+type ClockProps = {
+  locale: string;
+};
+export default class Clock extends Component<ClockProps> {
   render() {
     return (
       <div>
-        <h1>{new Date().toLocaleTimeString()}</h1>
+        <h1>{new Date().toLocaleTimeString(this.props.locale)}</h1>
       </div>
     );
   }
